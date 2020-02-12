@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		window.onload = function() {
+		    if (screen.width < 700) {
+		        var mvp = document.getElementById('vp');
+		        mvp.setAttribute('content','user-scalable=no,width=700');
+		    } else {
+		    	var mvp = document.getElementById('vp');
+		        mvp.setAttribute('content','user-scalable=no,width=device-width');
+		    }
+		}
+	</script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="js/wow.min.js"></script>
+	<script>new WOW().init();</script>
+	<link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+	<title>Triway</title>
+</head>
+<body>
+	<!-- Модальное окно формы-->
+	<div class="modal fade" id="exampleModalforma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="border-radius: 10px">
+				<div class="title" style="margin: 40px 0; font-weight: bold; text-transform: uppercase; font-size: 40px; text-align: center;">отправить заявку</div>
+				<div class="modal-body" style="padding: 0 30px 40px 30px">
+					<form id="contactForm" action="http://triway.ru/triathlon/handler.php" method="post">
+						<div class="form-group">
+							<select class="form-control" name="slot" required>
+								<option disabled selected>Выбор лота на мероприятие</option>
+								<option>Kids Run</option>
+								<option>TriWay Arena Run</option>
+								<option>TriWay Super Sprint</option>
+								<option>TriWay Sprint</option>
+								<option>TriWay Sprint MIX</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input id="name" class="form-control" name="name" required type="text" placeholder="Имя">
+						</div>
+						<div class="form-group">
+							<input id="name" class="form-control" name="surname" required type="text" placeholder="Фамилия">
+						</div>
+						<div class="form-group">
+							<input id="phone" class="form-control" name="phone" required type="text" placeholder="Номер мобильного телефона">
+						</div>
+						<div class="form-group">
+							<input id="email" class="form-control" name="email" required type="text" placeholder="E-mail">
+						</div>
+						<div class="form-group">
+							<input id="date" class="form-control" name="date" required type="text" placeholder="Дата рождения">
+						</div>
+						<div class="form-group">
+							<input id="groups" class="form-control" name="groups" required type="text" placeholder="Возрастная группа">
+						</div>
+						<div class="form-group">
+							<select class="form-control" name="we" required>
+								<option disabled selected>Откуда вы узнали о нашем забеге? </option>
+								<option>1) Рассказали друзья/знакомые </option>
+								<option>2) Увидел(а) рекламу в интернете </option>
+								<option>3) Другое </option>
+							</select>
+						</div>
+						<p style="text-align: center;">за один раз можно заказать только 1 билет на одного человека.</p>
+						<div class="form-group form-check">
+							<input id="check" class="form-check-input" checked type="checkbox">
+							<label class="form-check-label" for="check" style="font-size: 10px">Я даю согласие на обработку персональных данных в соответствии с политикой конфеденциальности</label>
+						</div>
+						<div class="result">
+							<span id="answer"></span>
+							<span id="loader" style="display:none"><img src="image/loader.gif" alt=""></span>
+						</div>
+						<div class="button-in">
+							<button id="button" class="button" type="submit">Принять участие</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Модальное окно схем-->
+	<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="border-radius: 10px">
+				<div class="modal-body" style="padding: 20px">
+					<img src="image/kinds1.jpg" width="100%" height="100%" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="border-radius: 10px">
+				<div class="modal-body" style="padding: 20px">
+					<img src="image/kinds2.jpg" width="100%" height="100%" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="border-radius: 10px">
+				<div class="modal-body" style="padding: 20px">
+					<img src="image/kinds3.jpg" width="100%" height="100%" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<header>
+	</header>
+	<section class="buy">
+		<div class="title_buy">
+			<h1>ОПИСАНИЕ ПРОЦЕССА ОПЛАТЫ</h1>
+			<h3>ОПЛАТА С ПОМОЩЬЮ БАНКОВСКОЙ КАРТЫ</h3>
+			<span></span>
+		</div>
+		<p>Для выбора оплаты товара с помощью банковской карты на соответствующей странице сайта необходимо нажать кнопку «Оплата банковской картой». Оплата происходит через авторизационный сервер Процессингового центра Банка с использованием Банковских кредитных карт следующих платежных систем:</p>
+		<div class="subtitle">- Visa International</div>
+		<img src="image/visa.png" alt="">
+		<div class="subtitle">- MasterCard World Wide</div>
+		<img src="image/mastercard.png" alt="">
+		<div class="subtitle">Описание процесса передачи данных</div>
+		<p>Для оплаты покупки Вы будете перенаправлены на платежный шлюз ПАО "Сбербанк России" для ввода реквизитов Вашей карты.</p>
+		<p>Пожалуйста, приготовьте Вашу пластиковую карту заранее. Соединение с платежным шлюзом и передача информации осуществляется в защищенном режиме с использованием протокола шифрования SSL.</p>
+		<p>В случае если Ваш банк поддерживает технологию безопасного проведения интернет-платежей Verified By Visa или MasterCard Secure Code для проведения платежа также может потребоваться ввод специального пароля.</p>
+		<p>Способы и возможность получения паролей для совершения интернет-платежей Вы можете уточнить в банке, выпустившем карту. Настоящий сайт поддерживает 258-битное шифрование.
+		Конфиденциальность сообщаемой персональной информации обеспечивается ПАО "Сбербанк России".</p>
+		<p>Введенная информация не будет предоставлена третьим лицам за исключением случаев, предусмотренных законодательством РФ.<br>
+		Проведение платежей по банковским картам осуществляется в строгом соответствии с требованиями платежных систем Visa Int. и MasterCard Europe Sprl.</p>
+		<div class="subtitle">Описание процесса оплаты</div>
+		<p>При выборе формы оплаты с помощью пластиковой карты проведение платежа по заказу производится непосредственно после его оформления. После завершения оформления заказа в нашем магазине, Вы должны будете нажать на кнопку «Оплата банковской картой», при этом система переключит Вас на страницу авторотационного сервера, где Вам будет предложено ввести данные пластиковой карты, инициировать ее авторизацию, после чего вернуться в наш магазин кнопкой "Вернуться в магазин". После того, как Вы возвращаетесь в наш магазин, система уведомит Вас о результатах авторизации. В случае подтверждения авторизации Ваш заказ будет автоматически выполняться в соответствии с заданными Вами условиями. В случае отказа в авторизации карты Вы сможете повторить процедуру оплаты.</p>
+		<div class="subtitle">Оплата по банковским картам VISA</div>
+		<p>К оплате принимаются все виды платежных карточек VISA, за исключением Visa Electron. В большинстве случаев карта Visa Electron не применима для оплаты через интернет, за исключением карт, выпущенных отдельными банками.
+		О возможность оплаты картой Visa Electron вам нужно выяснять у банка-эмитента вашей карты. Оплата по кредитным картам MasterCard На 	сайте к оплате принимаются все виды MasterCard, за исключением Maestro.</p>
+		<div class="subtitle">Что нужно знать:</div>
+		<ul>
+			<li>- номер вашей кредитной карты;</li>
+			<li>- срок окончания действия вашей кредитной карты, месяц/год;</li>
+			<li>- CVV код для карт VISA / CVC код для MasterCard:</li>
+		</ul>
+		<img src="image/cvc.png" alt="">
+		<div class="subtitle">3 последние цифры на полосе для подписи на обороте карты.</div>
+		<p>Если на вашей карте код CVC / CVV отсутствует, то, возможно, карта не пригодна для CNP транзакций (т.е. таких транзакций, при которых сама карта не присутствует, а используются её реквизиты), и вам следует обратиться в банк для получения подробной информации.</p>
+		<div class="subtitle">При аннулировании заказа</div>
+		<p>При аннулировании оплаченного заказа Вы можете заказать другую услугу на эту сумму, либо вернуть всю сумму на карту предварительно написав письмо на e-mail</p>
+		<a href="index.html"><button class="button">Вернуться на сайт</button></a>
+	</section>
+	<!--Скрипты-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="owlcarousel/owl.carousel.min.js"></script>
+	<script src="js/script.js"></script>
+	<!-- Маска для номера телефона -->
+	<script src="http://triway.ru/triathlon/js/jquery.maskedinput.min.js"></script>
+	<!-- Инициализация и Ajax-запрос -->
+	<script src="http://triway.ru/triathlon/js/main.js"></script>
+	<script  src="js/index.js"></script>
+	<script  src="js/timer.js"></script>
+	<script  src="js/scroll.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
+</html>
