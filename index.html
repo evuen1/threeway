@@ -7,27 +7,25 @@
 	<meta charset="UTF-8">
 
 	<meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
-    
+
 	<script>
+		window.onload = function () {
 
-		window.onload = function() {
+			if (screen.width < 700) {
 
-		    if (screen.width < 700) {
+				var mvp = document.getElementById('vp');
 
-		        var mvp = document.getElementById('vp');
+				mvp.setAttribute('content', 'user-scalable=no,width=700');
 
-		        mvp.setAttribute('content','user-scalable=no,width=700');
+			} else {
 
-		    } else {
+				var mvp = document.getElementById('vp');
 
-		    	var mvp = document.getElementById('vp');
+				mvp.setAttribute('content', 'user-scalable=no,width=device-width');
 
-		        mvp.setAttribute('content','user-scalable=no,width=device-width');
-
-		    }
+			}
 
 		}
-
 	</script>
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -39,37 +37,50 @@
 	<script src="js/wow.min.js"></script>
 	<script src="js/jquery.tubular.1.0.js"></script>
 
-	<script>new WOW().init();</script>
+	<script>
+		new WOW().init();
+	</script>
 
 	<link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
 
 	<link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"  type="text/javascript"></script>  <!-- подключаем jquery -->
-    <script type="text/javascript" charset="utf-8" src="js/jquery.tubular.1.0.js"></script> <!-- подключаем плагин -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+	<!-- подключаем jquery -->
+	<script type="text/javascript" charset="utf-8" src="js/jquery.tubular.1.0.js"></script> <!-- подключаем плагин -->
 	<title>Triway</title>
 	<!-- Facebook Pixel Code -->
-	<script>$().ready(function() {
-    $('#wrapper').tubular({
-        videoId: 'CsoSrMuj534'
-    });
-});
-</script>
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '2197596927134370');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2197596927134370&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
+	<script>
+		$().ready(function () {
+			$('#wrapper').tubular({
+				videoId: 'CsoSrMuj534'
+			});
+		});
+	</script>
+	<script>
+		! function (f, b, e, v, n, t, s) {
+			if (f.fbq) return;
+			n = f.fbq = function () {
+				n.callMethod ?
+					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n;
+			n.push = n;
+			n.loaded = !0;
+			n.version = '2.0';
+			n.queue = [];
+			t = b.createElement(e);
+			t.async = !0;
+			t.src = v;
+			s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window, document, 'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '2197596927134370');
+		fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=2197596927134370&ev=PageView&noscript=1" /></noscript>
+	<!-- End Facebook Pixel Code -->
 
 </head>
 
@@ -77,13 +88,16 @@
 
 	<!-- Модальное окно формы-->
 
-	<div class="modal fade" id="exampleModalforma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="exampleModalforma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
 
 		<div class="modal-dialog" role="document">
 
 			<div class="modal-content" style="border-radius: 10px">
 
-				<div class="title" style="margin: 40px 0; font-weight: bold; text-transform: uppercase; font-size: 40px; text-align: center;">отправить заявку</div>
+				<div class="title"
+					style="margin: 40px 0; font-weight: bold; text-transform: uppercase; font-size: 40px; text-align: center;">
+					отправить заявку</div>
 
 				<div class="modal-body" style="padding: 0 30px 40px 30px">
 
@@ -104,7 +118,7 @@
 								<option value="4">Triway Sprint</option>
 
 								<option value="5">Triway Olympic</option>
-								
+
 								<option value="6">Triway Olympic (Эстафета)</option>
 
 							</select>
@@ -119,25 +133,29 @@
 
 						<div class="form-group">
 
-							<input id="name" class="form-control" name="surname" required type="text" placeholder="Фамилия">
+							<input id="name" class="form-control" name="surname" required type="text"
+								placeholder="Фамилия">
 
 						</div>
 
 						<div class="form-group">
 
-							<input id="phone" class="form-control" name="phone" required type="text" placeholder="Номер мобильного телефона">
+							<input id="phone" class="form-control" name="phone" required type="text"
+								placeholder="Номер мобильного телефона">
 
 						</div>
 
 						<div class="form-group">
 
-							<input id="email" class="form-control" name="email" required type="email" placeholder="E-mail">
+							<input id="email" class="form-control" name="email" required type="email"
+								placeholder="E-mail">
 
 						</div>
 
 						<div class="form-group">
 
-							<input id="date" class="form-control" name="date" required type="date" placeholder="Дата рождения">
+							<input id="date" class="form-control" name="date" required type="date"
+								placeholder="Дата рождения">
 
 						</div>
 
@@ -163,7 +181,8 @@
 
 							<input id="check" class="form-check-input" checked type="checkbox">
 
-							<label class="form-check-label" for="check" style="font-size: 10px">Я даю согласие на обработку персональных данных в соответствии с политикой конфеденциальности</label>
+							<label class="form-check-label" for="check" style="font-size: 10px">Я даю согласие на
+								обработку персональных данных в соответствии с политикой конфеденциальности</label>
 
 						</div>
 
@@ -193,7 +212,8 @@
 
 	<!-- Модальное окно схем-->
 
-	<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
 
 		<div class="modal-dialog" role="document">
 
@@ -211,7 +231,8 @@
 
 	</div>
 
-	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
 
 		<div class="modal-dialog" role="document">
 
@@ -229,7 +250,8 @@
 
 	</div>
 
-	<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
 
 		<div class="modal-dialog" role="document">
 
@@ -248,198 +270,203 @@
 	</div>
 
 	<header>
-<div id="wrapper">
-		<div class="container-fluid">
+		<div id="wrapper">
+			<div class="container-fluid">
 
-			<div class="circle-dotted-1"></div>
+				<div class="circle-dotted-1"></div>
 
-			<div class="circle-dotted-2"></div>
+				<div class="circle-dotted-2"></div>
 
-			<div class="circle-dotted-3"></div>
+				<div class="circle-dotted-3"></div>
 
-			<div class="circle-dotted-4"></div>
+				<div class="circle-dotted-4"></div>
 
-			<div class="row">
+				<div class="row">
 
-				<div class="col d-flex header-top fixed-top" style="background: linear-gradient(to right, #e8f8fc 50%, white 50%);">
+					<div class="col d-flex header-top fixed-top"
+						style="background: linear-gradient(to right, #e8f8fc 50%, white 50%);">
 
-					<div class="logo"><img src="image/logo.png"></div>
+						<div class="logo"><img src="image/logo.png"></div>
 
-					<div class="container">
+						<div class="container">
 
-						<div class="row">
+							<div class="row">
 
-							<div class="col">
+								<div class="col">
 
-								<nav>
+									<nav>
 
-									<div id="menu">
+										<div id="menu">
 
-										<div id="menu-toggle">
+											<div id="menu-toggle">
 
-											<div id="menu-icon">
+												<div id="menu-icon">
 
-												<div class="bar"></div>
+													<div class="bar"></div>
 
-												<div class="bar"></div>
+													<div class="bar"></div>
 
-												<div class="bar"></div>
+													<div class="bar"></div>
+
+												</div>
+
+											</div>
+
+											<ul class="menu">
+
+												<li>
+
+													<a href="index.html#info" class="anchor">информация</a>
+
+												</li>
+
+												<li>
+
+													<a href="index.html#kinds" class="anchor">виды соревнования</a>
+
+												</li>
+
+												<li>
+
+													<a href="index.html#cost" class="anchor1">стоимость</a>
+
+												</li>
+
+												<li>
+
+													<a href="index.html#buy" class="anchor1">регистрация</a>
+
+												</li>
+
+												<li>
+
+													<a href="index.html#refusal" class="anchor">отказ от регистрации</a>
+
+												</li>
+
+											</ul>
+
+										</div>
+
+									</nav>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="icon">
+
+							<a href="tel:+8(863)3002437"><img src="image/call.png" alt=""></a>
+
+							<a href="index.html#map"><img src="image/place.png" alt=""></a>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="container" style="margin-top: 150px;">
+
+					<div class="row justify-content-center">
+
+						<div class="col-12 col-lg-10 col-xl-8">
+
+							<div class="main zoomIn animated" data-wow-duration="2s">
+
+								<div class="row justify-content-between">
+
+									<div class="col-12 col-sm-6 time">
+
+										<div id="timer_wrap">
+
+											<div id="clock">
+
+												<div id='day'>
+
+													<p id='day0'></p>
+
+													<p id='day1'></p>
+
+												</div>
+
+												<div id="razd">
+
+													:
+
+												</div>
+
+												<div id='hour'>
+
+													<p id='hour0'></p>
+
+													<p id='hour1'></p>
+
+												</div>
+
+												<div id="razd">
+
+													:
+
+												</div>
+
+												<div id='min'>
+
+													<p id='min0'></p>
+
+													<p id='min1'></p>
+
+												</div>
+
+												<div id="razd">
+
+													:
+
+												</div>
+
+												<div id='sec'>
+
+													<p id='sec0'></p>
+
+													<p id='sec1'></p>
+
+												</div>
 
 											</div>
 
 										</div>
 
-										<ul class="menu">
-
-											<li>
-
-												<a href="index.html#info" class="anchor">информация</a>
-
-											</li>
-
-											<li>
-
-												<a href="index.html#kinds" class="anchor">виды соревнования</a>
-
-											</li>
-
-											<li>
-
-												<a href="index.html#cost" class="anchor1">стоимость</a>
-
-											</li>
-
-											<li>
-
-												<a href="index.html#buy" class="anchor1">регистрация</a>
-
-											</li>
-
-											<li>
-
-												<a href="index.html#refusal" class="anchor">отказ от регистрации</a>
-
-											</li>
-
-										</ul>
-
 									</div>
 
-								</nav>
+									<div class="col-3 ad">
 
-							</div>
 
-						</div>
-
-					</div>
-
-					<div class="icon">
-
-						<a href="tel:+8(863)3002437"><img src="image/call.png" alt=""></a>
-
-						<a href="index.html#map"><img src="image/place.png" alt=""></a>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="container" style="margin-top: 150px;">
-
-				<div class="row justify-content-center">
-
-					<div class="col-12 col-lg-10 col-xl-8">
-
-						<div class="main zoomIn animated" data-wow-duration="2s">
-
-							<div class="row justify-content-between">
-
-								<div class="col-12 col-sm-6 time">
-
-									<div id="timer_wrap">
-
-										<div id="clock">
-
-											<div id='day'>
-
-												<p id='day0'></p>
-
-												<p id='day1'></p>
-
-											</div>
-
-											<div id="razd">
-
-												:
-
-											</div>
-
-											<div id='hour'>
-
-												<p id='hour0'></p>
-
-												<p id='hour1'></p>
-
-											</div>
-
-											<div id="razd">
-
-												:
-
-											</div>
-
-											<div id='min'>
-
-												<p id='min0'></p>
-
-												<p id='min1'></p>
-
-											</div>
-
-											<div id="razd">
-
-												:
-
-											</div>
-
-											<div id='sec'>
-
-												<p id='sec0'></p>
-
-												<p id='sec1'></p>
-
-											</div>
-
-										</div>		
 
 									</div>
 
 								</div>
 
-								<div class="col-3 ad">
+								<div class="row justify-content-center">
 
-									
+									<div class="col-9 text">
 
-								</div>
+										<p>8 сентября забег TRIWAY ARENA RUN. Выбери дистанцию 5 или 10 км и обнови свой
+											лучший результат.</p>
 
-							</div>
-
-							<div class="row justify-content-center">
-
-								<div class="col-9 text">
-
-									<p>8 сентября забег TRIWAY ARENA RUN. Выбери дистанцию 5 или 10 км и обнови свой лучший результат.</p>
+									</div>
 
 								</div>
 
-							</div>
+								<div class="row justify-content-center">
 
-							<div class="row justify-content-center">
+									<div class="col-10 col-sm-6">
 
-								<div class="col-10 col-sm-6">
+										<button class="button" data-toggle="modal"
+											data-target="#exampleModalforma">Принять участие</button>
 
-									<button class="button" data-toggle="modal" data-target="#exampleModalforma">Принять участие</button>
+									</div>
 
 								</div>
 
@@ -451,36 +478,36 @@
 
 				</div>
 
-			</div>
+				<div class="row header-down" style="bottom: -60px;">
 
-			<div class="row header-down" style="bottom: -60px;">
+					<div class="col-4 d-flex align-items-end">
 
-				<div class="col-4 d-flex align-items-end">
+						<div class="webs">
 
-					<div class="webs">
+							<a href="https://www.facebook.com/Triway.ru/" target="blank"><img src="image/webs1.png"
+									alt=""></a>
 
-						<a href="https://www.facebook.com/Triway.ru/" target="blank"><img src="image/webs1.png" alt=""></a>
+							<a href="https://instagram.com/triway.ru?igshid=11k6wah6kcn88" target="blank"><img
+									src="image/webs2.png" alt=""></a>
 
-						<a href="https://instagram.com/triway.ru?igshid=11k6wah6kcn88" target="blank"><img src="image/webs2.png" alt=""></a>
+						</div>
+
+					</div>
+
+					<div class="col-4 offset-4">
+
+						<div class="leaf">
+
+							<img src="image/leaf1.png">
+
+						</div>
 
 					</div>
 
 				</div>
 
-				<div class="col-4 offset-4">
-
-					<div class="leaf">
-
-						<img src="image/leaf1.png">
-
-					</div>
-
-				</div>
-
 			</div>
-
 		</div>
-</div>
 	</header>
 
 	<div class="info" id="info">
@@ -503,15 +530,19 @@
 
 							<div class="col-12 col-lg-6 col-xl-4 left">
 
-								<img src="image/info-left.jpg" class="left-image bounceInLeft animated wow" data-wow-delay=".5s" alt="">
+								<img src="image/info-left.jpg" class="left-image bounceInLeft animated wow"
+									data-wow-delay=".5s" alt="">
 
-								<div class="title" style="margin-top: 20px;">информация о соревнованиях triway Olympic 2019</div>
+								<div class="title" style="margin-top: 20px;">информация о соревнованиях triway Olympic
+									2019</div>
 
-								<p>8 сентября забег TRIWAY ARENA RUN. Выбери дистанцию 5 или 10 км и обнови свой лучший результат.  <br>
+								<p>8 сентября забег TRIWAY ARENA RUN. Выбери дистанцию 5 или 10 км и обнови свой лучший
+									результат. <br>
 
-								Место размещения стартового городка и транзитной зоны:<br>Россия, г. Ростов-на-Дону, Пойменная 2А, Гребной канал "Дон"</p>
+									Место размещения стартового городка и транзитной зоны:<br>Россия, г. Ростов-на-Дону,
+									Пойменная 2А, Гребной канал "Дон"</p>
 
-								
+
 
 								<div class="awards">
 
@@ -570,14 +601,15 @@
 									</ul>
 
 								</div>
-									<p><b>Регистрируйся прямо сейчас</b> 
-TRIWAY ARENA RUN – забег, который нельзя пропустить!</p>
+								<p><b>Регистрируйся прямо сейчас</b>
+									TRIWAY ARENA RUN – забег, который нельзя пропустить!</p>
 
 							</div>
 
 							<div class="col-10 col-lg-6 col-xl-4 right" style="padding: 0">
 
-								<img src="image/info-right.jpg" class="right-image bounceInRight animated wow" data-wow-delay=".5s" alt="">
+								<img src="image/info-right.jpg" class="right-image bounceInRight animated wow"
+									data-wow-delay=".5s" alt="">
 
 								<div class="owl-carousel slide owl-theme">
 
@@ -585,7 +617,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<span>01</span>
 
-										<p>Первый забег вокруг стадиона "Ростов Арена" на 5 или 10 км. (победители забега смогут получить спортивный разряд)</p>
+										<p>Первый забег вокруг стадиона "Ростов Арена" на 5 или 10 км. (победители
+											забега смогут получить спортивный разряд)</p>
 
 									</div>
 
@@ -593,7 +626,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<span>02</span>
 
-										<p>Первый забег вокруг стадиона "Ростов Арена" на 5 или 10 км. (победители забега смогут получить спортивный разряд)</p>
+										<p>Первый забег вокруг стадиона "Ростов Арена" на 5 или 10 км. (победители
+											забега смогут получить спортивный разряд)</p>
 
 									</div>
 
@@ -601,7 +635,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<span>03</span>
 
-										<p>Первый забег вокруг стадиона "Ростов Арена" на 5 или 10 км. (победители забега смогут получить спортивный разряд)</p>
+										<p>Первый забег вокруг стадиона "Ростов Арена" на 5 или 10 км. (победители
+											забега смогут получить спортивный разряд)</p>
 
 									</div>
 
@@ -651,7 +686,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 			<div class="row justify-content-between">
 
-			    <div class="col-12 col-lg-5 none">
+				<div class="col-12 col-lg-5 none">
 
 					<div class="title">Детский забег</div>
 
@@ -669,7 +704,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 							<div class="text text1">
 
-								<p style="margin-left: 65px;">Бег среди детей в возрасте от 6 до 14 лет на дистанции 1км.</p>
+								<p style="margin-left: 65px;">Бег среди детей в возрасте от 6 до 14 лет на дистанции
+									1км.</p>
 
 								<ul>
 
@@ -679,7 +715,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<div class="in">
 
-											<p><b style="font-family: 'Gilroy-Heavy';">Дата и время начала соревнований:</b><br>09.06.2019, 8:00.</p>
+											<p><b style="font-family: 'Gilroy-Heavy';">Дата и время начала
+													соревнований:</b><br>09.06.2019, 8:00.</p>
 
 										</div>
 
@@ -691,7 +728,9 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<div class="in">
 
-											<p><b style="font-family: 'Gilroy-Heavy';">Место проведения: </b>Российская Федерация, г. Ростов-на-Дону, Ростовская область, Гребной канал "Дон"</p>
+											<p><b style="font-family: 'Gilroy-Heavy';">Место проведения: </b>Российская
+												Федерация, г. Ростов-на-Дону, Ростовская область, Гребной канал "Дон"
+											</p>
 
 										</div>
 
@@ -733,7 +772,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 							<div class="text text2">
 
-								<p style="margin-left: 65px;">Забег на дистанциях 5км и 10км (в возрасте от 14 лет и 16 лет соответственно).</p>
+								<p style="margin-left: 65px;">Забег на дистанциях 5км и 10км (в возрасте от 14 лет и 16
+									лет соответственно).</p>
 
 								<ul>
 
@@ -743,7 +783,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<div class="in">
 
-											<p><b style="font-family: 'Gilroy-Heavy';">Дата и время начала соревнований:</b><br>08.09.2019, 8:00.</p>
+											<p><b style="font-family: 'Gilroy-Heavy';">Дата и время начала
+													соревнований:</b><br>08.09.2019, 8:00.</p>
 
 										</div>
 
@@ -755,7 +796,9 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<div class="in">
 
-											<p><b style="font-family: 'Gilroy-Heavy';">Место проведения: </b>Российская Федерация, г. Ростов-на-Дону, Ростовская область, Гребной канал "Дон"</p>
+											<p><b style="font-family: 'Gilroy-Heavy';">Место проведения: </b>Российская
+												Федерация, г. Ростов-на-Дону, Ростовская область, Гребной канал "Дон"
+											</p>
 
 										</div>
 
@@ -797,15 +840,16 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 							<div class="text text3">
 
-								<p style="margin-left: 65px;">Соревнование по акватлону Swim RUN. Дистанция включает в себя:
+								<p style="margin-left: 65px;">Соревнование по акватлону Swim RUN. Дистанция включает в
+									себя:
 
-								<ul class="triathlon">
+									<ul class="triathlon">
 
-									<li>500м плавание </li>
+										<li>500м плавание </li>
 
-									<li>2,5км  бег</li>
+										<li>2,5км бег</li>
 
-								</ul>
+									</ul>
 
 								</p>
 
@@ -817,7 +861,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<div class="in">
 
-											<p><b style="font-family: 'Gilroy-Heavy';">Дата и время начала соревнований:</b><br>08.09.2019, 10:00.</p>
+											<p><b style="font-family: 'Gilroy-Heavy';">Дата и время начала
+													соревнований:</b><br>08.09.2019, 10:00.</p>
 
 										</div>
 
@@ -829,7 +874,9 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<div class="in">
 
-											<p><b style="font-family: 'Gilroy-Heavy';">Место проведения: </b>Российская Федерация, г. Ростов-на-Дону, Ростовская область, Гребной канал "Дон"</p>
+											<p><b style="font-family: 'Gilroy-Heavy';">Место проведения: </b>Российская
+												Федерация, г. Ростов-на-Дону, Ростовская область, Гребной канал "Дон"
+											</p>
 
 										</div>
 
@@ -869,7 +916,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 							<div class="text text4">
 
-								<p style="margin-left: 65px;">Соревнование по триатлону на дистанции Olympic (индивидуально и эстафета). Дистанция включает в себя:</p>
+								<p style="margin-left: 65px;">Соревнование по триатлону на дистанции Olympic
+									(индивидуально и эстафета). Дистанция включает в себя:</p>
 
 								<ul class="triathlon">
 
@@ -877,7 +925,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 									<li>40км велогонка</li>
 
-									<li>10 км  бег</li>
+									<li>10 км бег</li>
 
 								</ul>
 
@@ -889,7 +937,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<div class="in">
 
-											<p><b style="font-family: 'Gilroy-Heavy';">Дата и время начала соревнований:</b><br>08.09.2019, 10:00.</p>
+											<p><b style="font-family: 'Gilroy-Heavy';">Дата и время начала
+													соревнований:</b><br>08.09.2019, 10:00.</p>
 
 										</div>
 
@@ -901,7 +950,9 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<div class="in">
 
-											<p><b style="font-family: 'Gilroy-Heavy';">Место проведения: </b>Российская Федерация, г. Ростов-на-Дону, Ростовская область, Гребной канал "Дон"</p>
+											<p><b style="font-family: 'Gilroy-Heavy';">Место проведения: </b>Российская
+												Федерация, г. Ростов-на-Дону, Ростовская область, Гребной канал "Дон"
+											</p>
 
 										</div>
 
@@ -941,7 +992,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 							<div class="text text5">
 
-								<p style="margin-left: 65px;">Соревнование по триатлону на дистанции Sprint. Соревнование включает в себя последовательное прохождение двух дистанций:</p>
+								<p style="margin-left: 65px;">Соревнование по триатлону на дистанции Sprint.
+									Соревнование включает в себя последовательное прохождение двух дистанций:</p>
 
 								<ul class="triathlon">
 
@@ -949,7 +1001,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 									<li>20км велогонка</li>
 
-									<li>5 км  бег</li>
+									<li>5 км бег</li>
 
 
 								</ul>
@@ -962,7 +1014,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<div class="in">
 
-											<p><b style="font-family: 'Gilroy-Heavy';">Дата и время начала соревнований:</b><br>08.09.2019, 10:40.</p>
+											<p><b style="font-family: 'Gilroy-Heavy';">Дата и время начала
+													соревнований:</b><br>08.09.2019, 10:40.</p>
 
 										</div>
 
@@ -974,7 +1027,9 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 										<div class="in">
 
-											<p><b style="font-family: 'Gilroy-Heavy';">Место проведения: </b>Российская Федерация, г. Ростов-на-Дону, Ростовская область, Гребной канал "Дон"</p>
+											<p><b style="font-family: 'Gilroy-Heavy';">Место проведения: </b>Российская
+												Федерация, г. Ростов-на-Дону, Ростовская область, Гребной канал "Дон"
+											</p>
 
 										</div>
 
@@ -1008,9 +1063,14 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 							<div class="text text6">
 
-								<p style="margin-left: 65px;">Приходите с друзьями и родными - всех гостей ждёт крутая развлекательная программа, а для участников забега мы подготовили много приятных сюрпризов на трассе!</p>
+								<p style="margin-left: 65px;">Приходите с друзьями и родными - всех гостей ждёт крутая
+									развлекательная программа, а для участников забега мы подготовили много приятных
+									сюрпризов на трассе!</p>
 
-								<p class="support" style="margin: 20px 0 0 65px;">Соревнования проводятся при поддержке Управления Физической культуры и спорта Ростова-на-Дону, а также Министерства физической культуры и спорта Ростова-на-Дону и Ростовской области, Федерации триатлона Ростовской области и Администрации Ростовской области.</p>
+								<p class="support" style="margin: 20px 0 0 65px;">Соревнования проводятся при поддержке
+									Управления Физической культуры и спорта Ростова-на-Дону, а также Министерства
+									физической культуры и спорта Ростова-на-Дону и Ростовской области, Федерации
+									триатлона Ростовской области и Администрации Ростовской области.</p>
 
 							</div>
 
@@ -1058,7 +1118,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 					<span>07:00</span>
 
-					<p>Выдача стартовых пакетов для участников в соревнованиях по бегу и триатлону. Открытие транзитной зоны. (постановка велосипедов в транзитную зону)</p>
+					<p>Выдача стартовых пакетов для участников в соревнованиях по бегу и триатлону. Открытие транзитной
+						зоны. (постановка велосипедов в транзитную зону)</p>
 
 				</div>
 
@@ -1066,7 +1127,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 					<span>07:45</span>
 
-					<p>Общая разминка перед забегом «Ростов-АРЕНА» (Triway Arena RUN)  </p>
+					<p>Общая разминка перед забегом «Ростов-АРЕНА» (Triway Arena RUN) </p>
 
 				</div>
 
@@ -1074,7 +1135,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 					<span>08:00</span>
 
-					<p>СТАРТ забега «Ростов-АРЕНА»  (Triway Arena RUN)  (5км и 10 км) </p>
+					<p>СТАРТ забега «Ростов-АРЕНА» (Triway Arena RUN) (5км и 10 км) </p>
 
 				</div>
 
@@ -1090,7 +1151,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 					<span>09:40</span>
 
-					<p>ОБЩИЙ БРИФИНГ.   Закрытие транзитной зоны </p>
+					<p>ОБЩИЙ БРИФИНГ. Закрытие транзитной зоны </p>
 
 				</div>
 
@@ -1098,7 +1159,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 					<span>10:00</span>
 
-					<p>СТАРТ триатлона  «ОЛИМПИЙКА»  (Triway Olympic - плавание 1500м+велосипед 40км+бег 10км) и SWIM RUN (500м плавание+2,5км бег)</p>
+					<p>СТАРТ триатлона «ОЛИМПИЙКА» (Triway Olympic - плавание 1500м+велосипед 40км+бег 10км) и SWIM RUN
+						(500м плавание+2,5км бег)</p>
 
 				</div>
 
@@ -1106,7 +1168,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 					<span>10:40</span>
 
-					<p>СТАРТ триатлона СПРИНТ  (Triway Sprint - плавание 750м+велосипед 20км+бег 5км)</p>
+					<p>СТАРТ триатлона СПРИНТ (Triway Sprint - плавание 750м+велосипед 20км+бег 5км)</p>
 
 				</div>
 
@@ -1152,7 +1214,9 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 					<div class="list one none" style="padding-top: 75px;">
 
-						<div class="tag"><div>бесплатно</div></div>
+						<div class="tag">
+							<div>бесплатно</div>
+						</div>
 
 						<div class="title">стартовый взнос <br>kids run (детский забег)</div>
 
@@ -1183,7 +1247,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 								<li><span>1200 р</span></li>
 
 							</ul>
-                        <p>Повышение стоимости с 01.08.2019</p>
+							<p>Повышение стоимости с 01.08.2019</p>
 						</div>
 
 					</div>
@@ -1193,14 +1257,14 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 						<div class="title">Стартовый взнос <br>АКВАТЛОН Triway Swim RUN </div>
 
 						<div class="text">
-						    	<div class="subtitle">дистанция (500м+2,5km)</div>
+							<div class="subtitle">дистанция (500м+2,5km)</div>
 
 							<ul>
 
 								<li><span>990 р</span></li>
-                
+
 							</ul>
-                            <p>Повышение стоимости с 01.08.2019</p>
+							<p>Повышение стоимости с 01.08.2019</p>
 						</div>
 
 					</div>
@@ -1214,14 +1278,14 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 						<div class="title">Стартовый взнос <br>ТРИАТЛОН Triway Sprint</div>
 
 						<div class="text">
-						    <div class="subtitle">дистанция (500м+2,5km)</div>
+							<div class="subtitle">дистанция (500м+2,5km)</div>
 
 							<ul>
 
 								<li><span>3900 р</span></li>
 
 							</ul>
-                            <p>Повышение стоимости с 01.08.2019</p>
+							<p>Повышение стоимости с 01.08.2019</p>
 						</div>
 
 					</div>
@@ -1231,14 +1295,14 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 						<div class="title">Стартовый взнос <br>ТРИАТЛОН Triway Olympic </div>
 
 						<div class="text">
-						    <div class="subtitle">дистанция (1500m+40km+10km)</div>
+							<div class="subtitle">дистанция (1500m+40km+10km)</div>
 
 							<ul>
 
 								<li><span>4900 р</span></li>
 
 							</ul>
-                            <p>Повышение стоимости с 01.08.2019</p>
+							<p>Повышение стоимости с 01.08.2019</p>
 						</div>
 
 					</div>
@@ -1248,7 +1312,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 						<div class="title">Стартовый взнос <br>ТРИАТЛОН Triway Olympic</div>
 
 						<div class="text">
-                         <div class="subtitle">"дистанция (500м+2,5km) Эстафета</div>
+							<div class="subtitle">"дистанция (500м+2,5km) Эстафета</div>
 							<ul>
 
 								<li><span>Стоимость с команды 7950 р</span></li>
@@ -1304,7 +1368,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 								<option value="4">Triway Sprint</option>
 
 								<option value="5">Triway Olympic</option>
-								
+
 								<option value="6">Triway Olympic (Эстафета)</option>
 
 							</select>
@@ -1319,25 +1383,29 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 						<div class="form-group">
 
-							<input id="name" class="form-control" name="surname" required type="text" placeholder="Фамилия">
+							<input id="name" class="form-control" name="surname" required type="text"
+								placeholder="Фамилия">
 
 						</div>
 
 						<div class="form-group">
 
-							<input id="phone1" class="form-control" name="phone" required type="text" placeholder="Номер мобильного телефона">
+							<input id="phone1" class="form-control" name="phone" required type="text"
+								placeholder="Номер мобильного телефона">
 
 						</div>
 
 						<div class="form-group">
 
-							<input id="email" class="form-control" name="email" required type="email" placeholder="E-mail">
+							<input id="email" class="form-control" name="email" required type="email"
+								placeholder="E-mail">
 
 						</div>
 
 						<div class="form-group">
 
-							<input id="date" class="form-control" name="date" required type="date" placeholder="Дата рождения">
+							<input id="date" class="form-control" name="date" required type="date"
+								placeholder="Дата рождения">
 
 						</div>
 
@@ -1363,7 +1431,8 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 							<input id="check" class="form-check-input" checked type="checkbox">
 
-							<label class="form-check-label" for="check" style="font-size: 10px">Я даю согласие на обработку персональных данных в соответствии с политикой конфеденциальности</label>
+							<label class="form-check-label" for="check" style="font-size: 10px">Я даю согласие на
+								обработку персональных данных в соответствии с политикой конфеденциальности</label>
 
 						</div>
 
@@ -1381,7 +1450,7 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 						</div>
 
-					</form>	
+					</form>
 
 				</div>
 
@@ -1415,13 +1484,15 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 					<div class="title">отказ от регистрации</div>
 
-					<p style="margin-bottom: 65px; width: 501px">Регистрация на соревнования закрывается 7 сентября 2019 года (за 1 неделю до старта). Если вы решили не участвовать в соревнованиях, Вы можете отменить свою регистрацию.</p>
+					<p style="margin-bottom: 65px; width: 501px">Регистрация на соревнования закрывается 7 сентября 2019
+						года (за 1 неделю до старта). Если вы решили не участвовать в соревнованиях, Вы можете отменить
+						свою регистрацию.</p>
 
 					<ul>
 
 						<li>
 
-							<p>Отмена регистрации с 01 июля 2019  до 31 июля 2019: возврат 50%</p>
+							<p>Отмена регистрации с 01 июля 2019 до 31 июля 2019: возврат 50%</p>
 
 						</li>
 
@@ -1455,109 +1526,11 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 	<div class="map" id="map">
 
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.652786142509!2d39.73061843366159!3d47.203808131149145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b9a8f82b0a17%3A0xa03a1a01724d77d4!2z0JPRgNC10LHQvdC-0Lkg0JrQsNC90LDQuyDQlNC-0L0!5e0!3m2!1sru!2sru!4v1558212420100!5m2!1sru!2sru" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.652786142509!2d39.73061843366159!3d47.203808131149145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b9a8f82b0a17%3A0xa03a1a01724d77d4!2z0JPRgNC10LHQvdC-0Lkg0JrQsNC90LDQuyDQlNC-0L0!5e0!3m2!1sru!2sru!4v1558212420100!5m2!1sru!2sru"
+			width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 	</div>
-
-	<footer>
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-12 col-md-3">
-
-					<div class="logo-footer"><img src="image/logo-footer.png" alt=""></div>
-
-					<ul>
-
-						<li>
-
-							<a href="index.html#info" class="anchor">информация</a>
-
-						</li>
-
-						<li>
-
-							<a href="index.html#kinds" class="anchor">виды соревнования</a>
-
-						</li>
-
-						<li>
-
-							<a href="index.html#cost" class="anchor1">стоимость</a>
-
-						</li>
-
-						<li>
-
-							<a href="index.html#buy" class="anchor1">регистрация</a>
-
-						</li>
-
-						<li>
-
-							<a href="index.html#refusal" class="anchor">отказ от регистрации</a>
-
-						</li>
-
-					</ul>
-
-					<p style="text-align: left;">Сайт разработан - <a href="http://triway.ru/triathlon/ReklamaVRostov.ru">ReklamaVRostov.ru</a></p>
-
-				</div>
-
-				<div class="col-12 col-md-5">
-
-					<button class="button" data-toggle="modal" data-target="#exampleModalforma">Принять участие</button>
-
-					<p style="font-size: 18px; text-align: center; margin-top: 50px;">Расчётный счет № 40702810401000040280<br>
-
-					Банк ЮЖНЫЙ Ф-Л ПАО "ПРОМСВЯЗЬБАНК"<br>
-
-					Корр. счёт № 30101810100000000715 в ОТДЕЛЕНИЕ ВОЛГОГРАД Банка России<br>
-
-					БИК041806715 ИНН7744000912 КПП344443002<br>
-
-					Юр. адрес - 109052, Россия, г. Москва,<br> ул. Смирновская, д. 10, с. 22</p>
-
-					<a href="buy.html" target="blank" style="padding: 10px 0; color: #fff; float: right; text-transform: uppercase;">инструкция по оплате</a>
-
-				</div>
-
-				<div class="col-12 col-md-4 contacts">
-
-					<p style="margin: 0">ООО «Территория старта»<br>
-
-					ИНН: 6163214000<br>
-
-					КПП: 616301001<br>
-
-					ОГРН: 1196196012870<br>
-
-					Юридический адрес: 344000, Ростовская область, 
-
-					г. Ростов-на-Дону, пер. Журавлева 131 оф.3<br>
-
-					www.triway.ru<br>
-
-					Наша почта: triway@inbox.ru</p>
-
-					<div class="webs-footer">
-
-						<a href="https://www.facebook.com/Triway.ru/" target="blank"><img src="image/facebook.png" alt=""></a>
-
-						<a href="https://instagram.com/triway.ru?igshid=11k6wah6kcn88" target="blank"><img src="image/instagram.png" alt=""></a>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</footer>
 
 	<!--Скрипты-->
 
@@ -1569,175 +1542,174 @@ TRIWAY ARENA RUN – забег, который нельзя пропустит�
 
 	<!-- Инициализация и Ajax-запрос -->
 
-	<script  src="js/index.js"></script>
+	<script src="js/index.js"></script>
 
-	<script  src="js/timer.js"></script>
+	<script src="js/timer.js"></script>
 
-	<script  src="js/scroll.js"></script>
+	<script src="js/scroll.js"></script>
 
 
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+		integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+	</script>
 
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+		integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+	</script>
 
 </body>
 
 <script type="text/javascript">
+	$('document').ready(function () {
 
-  $('document').ready(function() {
+		$('#button').on('click', function () {
 
-    $('#button').on('click', function() {
+			$('.form-group .form-control').each(function () {
 
-      $('.form-group .form-control').each(function() {
+				if ($(this).val() != '') {
 
-        if ($(this).val() != '') {
+					console.log(32);
 
-          console.log(32);
+					// Если поле не пустое удаляем класс-указание
 
-          // Если поле не пустое удаляем класс-указание
+					$(this).removeClass('empty_field');
 
-          $(this).removeClass('empty_field');
+				} else {
 
-        } else {
+					console.log(33);
 
-          console.log(33);
+					// Если поле пустое добавляем класс-указание
 
-          // Если поле пустое добавляем класс-указание
+					$(this).addClass('empty_field');
 
-          $(this).addClass('empty_field');
+				}
 
-        }
+			});
 
-      });
+		});
 
-    });
-
-  });
-
+	});
 </script>
 
 <script type="text/javascript">
+	$('document').ready(function () {
 
-  $('document').ready(function() {
+		$('#button1').on('click', function () {
 
-    $('#button1').on('click', function() {
+			$('.form-group .form-control').each(function () {
 
-      $('.form-group .form-control').each(function() {
+				if ($(this).val() != '') {
 
-        if ($(this).val() != '') {
+					console.log(32);
 
-          console.log(32);
+					// Если поле не пустое удаляем класс-указание
 
-          // Если поле не пустое удаляем класс-указание
+					$(this).removeClass('empty_field');
 
-          $(this).removeClass('empty_field');
+				} else {
 
-        } else {
+					console.log(33);
 
-          console.log(33);
+					// Если поле пустое добавляем класс-указание
 
-          // Если поле пустое добавляем класс-указание
+					$(this).addClass('empty_field');
 
-          $(this).addClass('empty_field');
+				}
 
-        }
+			});
 
-      });
+		});
 
-    });
-
-  });
-
+	});
 </script>
 
 <!--Маска для телефона-->
 
 <script>
+	var phoneInput = document.querySelector("#phone");
 
-var phoneInput = document.querySelector("#phone");
+	phoneInput.addEventListener("keydown", function (e) {
 
-phoneInput.addEventListener("keydown", function(e) {
+		"ArrowLeft" != e.key && "ArrowRight" != e.key && "Backspace" != e.key && "Tab" != e.key && e
+			.preventDefault();
 
-	"ArrowLeft" != e.key && "ArrowRight" != e.key && "Backspace" != e.key && "Tab" != e.key && e.preventDefault();
+		var t = "+7 (111) 111-11-11";
 
-	var t = "+7 (111) 111-11-11";
+		if (/[0-9\+\ \-\(\)]/.test(e.key)) {
 
-	if (/[0-9\+\ \-\(\)]/.test(e.key)) {
+			var a = this.value,
 
-	var a = this.value,
+				n = a.length;
 
-	  n = a.length;
+			if (/[0-9]/.test(e.key))
 
-	if (/[0-9]/.test(e.key))
+				if ("1" == t[n]) this.value = a + e.key;
 
-	  if ("1" == t[n]) this.value = a + e.key;
+				else
 
-	  else
+					for (var r = n; r < t.length; r++) {
 
-	    for (var r = n; r < t.length; r++) {
+						if ("1" == t[r]) {
 
-	      if ("1" == t[r]) {
+							this.value = a + e.key;
 
-	        this.value = a + e.key;
+							break
 
-	        break
+						}
 
-	      }
+						a += t[r]
 
-	      a += t[r]
+					}
 
-	    }
-
-	}
+		}
 
 	});
-
 </script>
 
 <script>
+	var phoneInput = document.querySelector("#phone1");
 
-var phoneInput = document.querySelector("#phone1");
+	phoneInput.addEventListener("keydown", function (e) {
 
-phoneInput.addEventListener("keydown", function(e) {
+		"ArrowLeft" != e.key && "ArrowRight" != e.key && "Backspace" != e.key && "Tab" != e.key && e
+			.preventDefault();
 
-	"ArrowLeft" != e.key && "ArrowRight" != e.key && "Backspace" != e.key && "Tab" != e.key && e.preventDefault();
+		var t = "+7 (111) 111-11-11";
 
-	var t = "+7 (111) 111-11-11";
+		if (/[0-9\+\ \-\(\)]/.test(e.key)) {
 
-	if (/[0-9\+\ \-\(\)]/.test(e.key)) {
+			var a = this.value,
 
-	var a = this.value,
+				n = a.length;
 
-	  n = a.length;
+			if (/[0-9]/.test(e.key))
 
-	if (/[0-9]/.test(e.key))
+				if ("1" == t[n]) this.value = a + e.key;
 
-	  if ("1" == t[n]) this.value = a + e.key;
+				else
 
-	  else
+					for (var r = n; r < t.length; r++) {
 
-	    for (var r = n; r < t.length; r++) {
+						if ("1" == t[r]) {
 
-	      if ("1" == t[r]) {
+							this.value = a + e.key;
 
-	        this.value = a + e.key;
+							break
 
-	        break
+						}
 
-	      }
+						a += t[r]
 
-	      a += t[r]
+					}
 
-	    }
-
-	}
+		}
 
 	});
-
 </script>
 
-<script>/* jQuery tubular plugin
+<script>
+	/* jQuery tubular plugin
 |* by Sean McCambridge
 |* http://www.seanmccambridge.com/tubular
 |* version: 1.0
@@ -1749,140 +1721,157 @@ phoneInput.addEventListener("keydown", function(e) {
 |* Thanks,
 |* Sean */
 
-;(function ($, window) {
+	;
+	(function ($, window) {
 
-    // test for feature support and return if failure
-    
-    // defaults
-    var defaults = {
-        ratio: 16/9, // usually either 4/3 or 16/9 -- tweak as needed
-        videoId: 'CsoSrMuj534', // toy robot in space is a good default, no?
-        mute: true,
-        repeat: true,
-        width: $(window).width(),
-        wrapperZIndex: 1,
-        playButtonClass: 'tubular-play',
-        pauseButtonClass: 'tubular-pause',
-        muteButtonClass: 'tubular-mute',
-        volumeUpClass: 'tubular-volume-up',
-        volumeDownClass: 'tubular-volume-down',
-        increaseVolumeBy: 10,
-        start: 0
-    };
+		// test for feature support and return if failure
 
-    // methods
+		// defaults
+		var defaults = {
+			ratio: 16 / 9, // usually either 4/3 or 16/9 -- tweak as needed
+			videoId: 'CsoSrMuj534', // toy robot in space is a good default, no?
+			mute: true,
+			repeat: true,
+			width: $(window).width(),
+			wrapperZIndex: 1,
+			playButtonClass: 'tubular-play',
+			pauseButtonClass: 'tubular-pause',
+			muteButtonClass: 'tubular-mute',
+			volumeUpClass: 'tubular-volume-up',
+			volumeDownClass: 'tubular-volume-down',
+			increaseVolumeBy: 10,
+			start: 0
+		};
 
-    var tubular = function(node, options) { // should be called on the wrapper div
-        var options = $.extend({}, defaults, options),
-            $body = $('body') // cache body node
-            $node = $(node); // cache wrapper node
+		// methods
 
-        // build container
-        var tubularContainer = '<div id="tubular-container" style="overflow: hidden; position: absolute; z-index: 1; width: 100%; height: 100%"><div id="tubular-player" style="position: absolute"></div></div><div id="tubular-shield" style="width: 100%; height: 100%; z-index: 2; position: absolute; left: 0; top: 0;"></div>';
+		var tubular = function (node, options) { // should be called on the wrapper div
+			var options = $.extend({}, defaults, options),
+				$body = $('body') // cache body node
+			$node = $(node); // cache wrapper node
 
-        // set up css prereq's, inject tubular container and set up wrapper defaults
-        $('html,body').css({'width': '100%', 'height': '100%'});
-        $body.prepend(tubularContainer);
-        $node.css({position: 'relative;', 'z-index': options.wrapperZIndex});
+			// build container
+			var tubularContainer =
+				'<div id="tubular-container" style="overflow: hidden; position: absolute; z-index: 1; width: 100%; height: 100%"><div id="tubular-player" style="position: absolute"></div></div><div id="tubular-shield" style="width: 100%; height: 100%; z-index: 2; position: absolute; left: 0; top: 0;"></div>';
 
-        // set up iframe player, use global scope so YT api can talk
-        window.player;
-        window.onYouTubeIframeAPIReady = function() {
-            player = new YT.Player('tubular-player', {
-                width: options.width,
-                height: Math.ceil(options.width / options.ratio),
-                videoId: options.videoId,
-                playerVars: {
-                    controls: 0,
-                    showinfo: 0,
-                    modestbranding: 1,
-                    wmode: 'transparent'
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
+			// set up css prereq's, inject tubular container and set up wrapper defaults
+			$('html,body').css({
+				'width': '100%',
+				'height': '100%'
+			});
+			$body.prepend(tubularContainer);
+			$node.css({
+				position: 'relative;',
+				'z-index': options.wrapperZIndex
+			});
 
-        window.onPlayerReady = function(e) {
-            resize();
-            if (options.mute) e.target.mute();
-            e.target.seekTo(options.start);
-            e.target.playVideo();
-        }
+			// set up iframe player, use global scope so YT api can talk
+			window.player;
+			window.onYouTubeIframeAPIReady = function () {
+				player = new YT.Player('tubular-player', {
+					width: options.width,
+					height: Math.ceil(options.width / options.ratio),
+					videoId: options.videoId,
+					playerVars: {
+						controls: 0,
+						showinfo: 0,
+						modestbranding: 1,
+						wmode: 'transparent'
+					},
+					events: {
+						'onReady': onPlayerReady,
+						'onStateChange': onPlayerStateChange
+					}
+				});
+			}
 
-        window.onPlayerStateChange = function(state) {
-            if (state.data === 0 && options.repeat) { // video ended and repeat option is set true
-                player.seekTo(options.start); // restart
-            }
-        }
+			window.onPlayerReady = function (e) {
+				resize();
+				if (options.mute) e.target.mute();
+				e.target.seekTo(options.start);
+				e.target.playVideo();
+			}
 
-        // resize handler updates width, height and offset of player after resize/init
-        var resize = function() {
-            var width = $(window).width(),
-                pWidth, // player width, to be defined
-                height = $(window).height(),
-                pHeight, // player height, tbd
-                $tubularPlayer = $('#tubular-player');
+			window.onPlayerStateChange = function (state) {
+				if (state.data === 0 && options.repeat) { // video ended and repeat option is set true
+					player.seekTo(options.start); // restart
+				}
+			}
 
-            // when screen aspect ratio differs from video, video must center and underlay one dimension
+			// resize handler updates width, height and offset of player after resize/init
+			var resize = function () {
+				var width = $(window).width(),
+					pWidth, // player width, to be defined
+					height = $(window).height(),
+					pHeight, // player height, tbd
+					$tubularPlayer = $('#tubular-player');
 
-            if (width / options.ratio < height) { // if new video height < window height (gap underneath)
-                pWidth = Math.ceil(height * options.ratio); // get new player width
-                $tubularPlayer.width(pWidth).height(height).css({left: (width - pWidth) / 2, top: 0}); // player width is greater, offset left; reset top
-            } else { // new video width < window width (gap to right)
-                pHeight = Math.ceil(width / options.ratio); // get new player height
-                $tubularPlayer.width(width).height(pHeight).css({left: 0, top: (height - pHeight) / 2}); // player height is greater, offset top; reset left
-            }
+				// when screen aspect ratio differs from video, video must center and underlay one dimension
 
-        }
+				if (width / options.ratio < height) { // if new video height < window height (gap underneath)
+					pWidth = Math.ceil(height * options.ratio); // get new player width
+					$tubularPlayer.width(pWidth).height(height).css({
+						left: (width - pWidth) / 2,
+						top: 0
+					}); // player width is greater, offset left; reset top
+				} else { // new video width < window width (gap to right)
+					pHeight = Math.ceil(width / options.ratio); // get new player height
+					$tubularPlayer.width(width).height(pHeight).css({
+						left: 0,
+						top: (height - pHeight) / 2
+					}); // player height is greater, offset top; reset left
+				}
 
-        // events
-        $(window).on('resize.tubular', function() {
-            resize();
-        })
+			}
 
-        $('body').on('click','.' + options.playButtonClass, function(e) { // play button
-            e.preventDefault();
-            player.playVideo();
-        }).on('click', '.' + options.pauseButtonClass, function(e) { // pause button
-            e.preventDefault();
-            player.pauseVideo();
-        }).on('click', '.' + options.muteButtonClass, function(e) { // mute button
-            e.preventDefault();
-            (player.isMuted()) ? player.unMute() : player.mute();
-        }).on('click', '.' + options.volumeDownClass, function(e) { // volume down button
-            e.preventDefault();
-            var currentVolume = player.getVolume();
-            if (currentVolume < options.increaseVolumeBy) currentVolume = options.increaseVolumeBy;
-            player.setVolume(currentVolume - options.increaseVolumeBy);
-        }).on('click', '.' + options.volumeUpClass, function(e) { // volume up button
-            e.preventDefault();
-            if (player.isMuted()) player.unMute(); // if mute is on, unmute
-            var currentVolume = player.getVolume();
-            if (currentVolume > 100 - options.increaseVolumeBy) currentVolume = 100 - options.increaseVolumeBy;
-            player.setVolume(currentVolume + options.increaseVolumeBy);
-        })
-    }
+			// events
+			$(window).on('resize.tubular', function () {
+				resize();
+			})
 
-    // load yt iframe js api
+			$('body').on('click', '.' + options.playButtonClass, function (e) { // play button
+				e.preventDefault();
+				player.playVideo();
+			}).on('click', '.' + options.pauseButtonClass, function (e) { // pause button
+				e.preventDefault();
+				player.pauseVideo();
+			}).on('click', '.' + options.muteButtonClass, function (e) { // mute button
+				e.preventDefault();
+				(player.isMuted()) ? player.unMute(): player.mute();
+			}).on('click', '.' + options.volumeDownClass, function (e) { // volume down button
+				e.preventDefault();
+				var currentVolume = player.getVolume();
+				if (currentVolume < options.increaseVolumeBy) currentVolume = options.increaseVolumeBy;
+				player.setVolume(currentVolume - options.increaseVolumeBy);
+			}).on('click', '.' + options.volumeUpClass, function (e) { // volume up button
+				e.preventDefault();
+				if (player.isMuted()) player.unMute(); // if mute is on, unmute
+				var currentVolume = player.getVolume();
+				if (currentVolume > 100 - options.increaseVolumeBy) currentVolume = 100 - options
+					.increaseVolumeBy;
+				player.setVolume(currentVolume + options.increaseVolumeBy);
+			})
+		}
 
-    var tag = document.createElement('script');
-    tag.src = "//www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		// load yt iframe js api
 
-    // create plugin
+		var tag = document.createElement('script');
+		tag.src = "//www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    $.fn.tubular = function (options) {
-        return this.each(function () {
-            if (!$.data(this, 'tubular_instantiated')) { // let's only run one
-                $.data(this, 'tubular_instantiated', 
-                tubular(this, options));
-            }
-        });
-    }
+		// create plugin
 
-})(jQuery, window);</script>
+		$.fn.tubular = function (options) {
+			return this.each(function () {
+				if (!$.data(this, 'tubular_instantiated')) { // let's only run one
+					$.data(this, 'tubular_instantiated',
+						tubular(this, options));
+				}
+			});
+		}
+
+	})(jQuery, window);
+</script>
+
 </html>
